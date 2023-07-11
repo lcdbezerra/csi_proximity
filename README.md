@@ -11,6 +11,7 @@ Official code and dataset. Implementations are partly made on MATLAB and partly 
 The hyperparameter sweep across variants of the proposed neural network architecture is based on [Weights & Biases](https://wandb.ai). To create the sweep, run:
 
 ```
+cd data_driven
 python NN_sweep.py
 ```
 

@@ -2,7 +2,7 @@ import wandb
 import pprint
 
 sweep_config = {
-    "name": "Multiclass LDA Classifier, L30 S30 T30, multi-strategy, Skip Equal, Multi Antennas",
+    "name": "Multiclass NN Classifier, L30 S30 T30, Multi-strategy, Skip Equal, Multi Antennas",
     "method": "grid",
     "metric": {
         "goal": "maximize",
@@ -11,8 +11,6 @@ sweep_config = {
     "parameters": {
         "dist_threshold": {
             "values": [
-                # [10, 30, 80],
-                # [3,9,21,42,90],
                 [5,42,90],
                 [5,50],
                 [5],
@@ -40,25 +38,62 @@ sweep_config = {
                 # ["AHM-P2S","P2P"],
             ],
         },
-        "multiple_antennas": {
-            "values": [
-                # False, 
-                True,
-            ],
-        },
         "dataset": {
             "values": [
-                "ISL",
-                "ISL+AHM",
-                # "AHM",
+                "1",
+                "1+2",
+                # "2",
             ],
         },
         "seed": {
             "values": [10, 20, 30, 40, 50, 60],
+        },
+        "loss_weighting_method": {
+            "value": None,
+        },
+        "multiple_antennas": {
+            "value": True,
+        },
+        "optimizer": {
+            "value": "adam",
+        },
+        "epochs": {
+            "value": 100,
+        },
+        "seed": {
+            "values": [10, 20, 30],
+        },
+        "batch_size": {
+            "value": 64,
+        },
+        "learning_rate": {
+            "value": 1e-3,
+        },
+        "epochs": {
+            "value": 100,
+        },
+        "fc1": {
+            "values": [8, 16, 32, 64],
+        },
+        "fc1_bn": {
+            "values": [True, False],
+        },
+        "fc2": {
+            "values": [16, 32, 64],
+        },
+        "fc2_bn": {
+            "values": [True, False],
+        },
+        "fc3": {
+            "values": [4, 8, 16],
+        },
+        "fc3_bn": {
+            "values": [True, False],
         },
     },
 }
 
 if __name__=="__main__":
     pprint.pprint(sweep_config)
-    sweep_id = wandb.sweep(sweep_config, project="gpt-0")
+    sweep_id = wandb.sweep(sweep_config, project="csi_proximity")
+    print(sweep_id)
