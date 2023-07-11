@@ -6,6 +6,16 @@ Official code and dataset. Implementations are partly made on MATLAB and partly 
 
 ### Python Environment Setup
 
+We recommend using (Conda)[https://docs.conda.io/en/latest/] for creating an isolated environment dedicated for running our code and ensuring that your own packages won't be disturbed. Installation guidelines can be found [here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html). 
+
+After installing Conda, create the environment from our required package list using:
+
+```
+conda env create -f env.yml
+```
+
+Then activate the environment using `conda activate csi_proximity` and you're ready to start.
+
 ### Data-Driven
 
 The hyperparameter sweep across variants of the proposed neural network architecture is based on [Weights & Biases](https://wandb.ai). To create the sweep, run:

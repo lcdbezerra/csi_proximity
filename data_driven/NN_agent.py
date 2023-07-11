@@ -25,11 +25,11 @@ def load_dataset(source):
     # LOAD DATASET
     ML_PATH = "../dataset/"
     if source=="1":
-        filename = "Dataset_ISL_L30_S30_max30s_skipequal_20-03-2022.mat"
+        filename = "Dataset_Exp1_L30_S30_max30s_skipequal_20-03-2022.mat"
     elif source=="1+2":
-        filename = "Dataset_ISL+AHM_L30_S30_max30s_skipequal_19-03-2022.mat"
+        filename = "Dataset_Exp1+2_L30_S30_max30s_skipequal_19-03-2022.mat"
     elif source=="2":
-        filename = "Dataset_AHM_L30_S30_max30s_skipequal_28-03-2022.mat"
+        filename = "Dataset_Exp2_L30_S30_max30s_skipequal_28-03-2022.mat"
     else:
         raise ValueError("Dataset source not identified")
     f = h5py.File(ML_PATH+filename)
