@@ -6,7 +6,7 @@ Official code and dataset. Implementations are partly made on MATLAB and partly 
 
 ### Python Environment Setup
 
-We recommend using [Conda](https://docs.conda.io/en/latest/) for creating an isolated environment dedicated for running our code and ensuring that your own packages won't be disturbed. Installation guidelines can be found [here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html). 
+We recommend using [Conda](https://docs.conda.io/en/latest/) for creating an isolated environment dedicated to running our code and ensuring that your own packages won't be disturbed. Installation guidelines can be found [here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html). 
 
 After installing Conda, create the environment from our required package list using:
 
@@ -33,4 +33,4 @@ python NN_agent.py SWEEP_ID --online
 
 ### Model-Based
 
-🚧 Under construction 🚧
+Code for implementing the model-based solutions is available upon request. 
