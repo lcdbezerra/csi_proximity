@@ -28,7 +28,7 @@ python NN_sweep.py
 which also prints the sweep ID and a link for accessing the sweep results later on. Then run an agent (or multiple) to start training indefinitely. Add `-c 1` to the end of the command below to run a single hyperparameter combination.
 
 ```
-python NN_agent.py SWEEP_ID --online
+python agent.py SWEEP_ID --online
 ```
 
 ### Model-Based

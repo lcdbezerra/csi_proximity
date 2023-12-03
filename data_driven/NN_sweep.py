@@ -2,8 +2,8 @@ import wandb
 import pprint
 
 sweep_config = {
-    "name": "Multiclass NN Classifier, L30 S30 T30, Multi-strategy, Skip Equal, Multi Antennas",
-    "method": "grid",
+    "name": "Large sweep",
+    "method": "random",
     "metric": {
         "goal": "maximize",
         "name": "test_acc",
@@ -35,7 +35,7 @@ sweep_config = {
                 ["P2P+P2S", "P2P"],
                 ["P2P", "P2P"],
                 ["P2S","P2P"],
-                # ["AHM-P2S","P2P"],
+                ["AHM-P2S","P2P"],
             ],
         },
         "dataset": {
@@ -46,22 +46,13 @@ sweep_config = {
             ],
         },
         "seed": {
-            "values": [10, 20, 30, 40, 50, 60],
-        },
-        "loss_weighting_method": {
-            "value": None,
+            "values": [10, 20, 30, 40],
         },
         "multiple_antennas": {
             "value": True,
         },
         "optimizer": {
             "value": "adam",
-        },
-        "epochs": {
-            "value": 100,
-        },
-        "seed": {
-            "values": [10, 20, 30],
         },
         "batch_size": {
             "value": 64,
@@ -70,7 +61,7 @@ sweep_config = {
             "value": 1e-3,
         },
         "epochs": {
-            "value": 100,
+            "value": 50,
         },
         "fc1": {
             "values": [8, 16, 32, 64],
@@ -89,6 +80,19 @@ sweep_config = {
         },
         "fc3_bn": {
             "values": [True, False],
+        },
+        "encoder_type": {
+            "values": [
+                # "nn",
+                # "transformer",
+                "lstm_full",
+                # "lstm_hidden",
+                # "lstm_final",
+            ],
+        },
+        "hidden_size": {
+            "values": [8, 16, 32],
+            # "value": None,
         },
     },
 }

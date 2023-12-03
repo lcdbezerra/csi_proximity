@@ -161,3 +161,4 @@ cython_debug/
 
 *.asv
 data_driven/wandb
+*.zip
